@@ -1,0 +1,20 @@
+[
+  {
+    "question_text": "What are the dolphins",
+    "alternatives": [
+      "Amphibians",
+      "Fish",
+      "Mammals"
+    ],
+    "correct": 3
+  },
+  {
+    "question_text": "What are the dolphins",
+    "alternatives": [
+      "Amphibians",
+      "Fish",
+      "Mammals"
+    ],
+    "correct": 3
+  }
+]

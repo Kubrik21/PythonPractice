@@ -14,10 +14,10 @@ while True:
 
         list.append(todo.capitalize())
 
-        save_todo("todos.txt",list)
+        save_todo("todos.txt", list)
 
     elif choice.startswith("Show"):
-        with open("todos.txt","r") as file:
+        with open("todos.txt", "r") as file:
             for index, x in enumerate(file):
                 print(index,". ",x)
 
@@ -32,7 +32,7 @@ while True:
             todos=load_todo("todos.txt")
             todos[int(which) - 1] = f"{new}\n"
 
-            save_todo(filepath="todos.txt",content=todos)
+            save_todo(filepath="todos.txt", content=todos)
         except ValueError:
             print("błąd przy edycji")
             continue
