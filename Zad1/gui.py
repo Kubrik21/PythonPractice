@@ -7,8 +7,13 @@ input_box=sg.InputText(tooltip="Enter todo",key="todo")
 add_button=sg.Button("Add")
 listBox=sg.Listbox(values=funct.load_todo(),key="listbox",enable_events=True,size=[45,10])
 edit_button=sg.Button("Edit")
+complete_button=sg.Button("Complete")
+exit_button=sg.Button("Exit")
 
-layout=[[label],[input_box,add_button],[listBox,edit_button]]
+layout=[[label],
+        [input_box,add_button],
+        [listBox,edit_button],
+        [complete_button,exit_button]]
 
 window = sg.Window("Todo App",layout=layout,
                    font=('Helvetica',16),
@@ -39,7 +44,15 @@ while True:
             window["listbox"].update(values=load)
         case "listbox":
             window["todo"].update(value=values["listbox"][0])
-        case sg.WIN_CLOSED:
+        case "Complete":
+            todo=funct.load_todo()
+            actual_todo=values["listbox"][0]
+            todo.remove(actual_todo)
+            funct.save_todo(todo)
+
+            window["listbox"].update(values=todo)
+            window["todo"].update(value="")
+        case sg.WIN_CLOSED | "Exit":
             break
 
 window.close()
