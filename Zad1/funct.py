@@ -1,4 +1,5 @@
 FILEPATH = "todos.txt"
+
 def load_todo(filepath=FILEPATH):
     with open(filepath, 'r') as file:
         list = file.readlines()
