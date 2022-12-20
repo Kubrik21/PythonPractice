@@ -1,6 +1,9 @@
 import streamlit as st
-import funct
+from Zad1 import funct
 
+
+
+st.set_page_config(layout="wide")
 def add_todo():
     newTodo=st.session_state["new_todo"]
     todos.append(f"{newTodo}\n")
