@@ -1,6 +1,11 @@
 import funct
 import time
 import PySimpleGUI as sg
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt","w") as file:
+        pass
 
 sg.theme("Dark Gray 5")
 
